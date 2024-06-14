@@ -1,5 +1,5 @@
-Full Stack Developer
-Web App Developer
-Website Designer
-Video Editor
-Blog Writer
+a Full Stack Developer
+a Web App Developer
+a Website Designer
+a Video Editor
+a Blog Writer
