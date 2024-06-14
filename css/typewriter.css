@@ -1,0 +1,49 @@
+/* Centering the .role div and managing font size */
+.role {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 150px); /* Adjust based on the height of header and nav */
+  text-align: center;
+  background-color: #222; /* Darker background color */
+  padding-top: 20px; /* Add padding from the top */
+}
+
+.role-text {
+  text-align: left; /* Align text to the left */
+  margin-right: 20px; /* Margin between text and photo */
+  margin-bottom: 20px; /* Add margin below .role-text */
+  color: beige; /* Text color */
+}
+
+.role-photo {
+  text-align: right; /* Align photo to the right */
+  position: relative; /* Ensure relative positioning for absolute child */
+}
+
+.role-photo img {
+  max-width: 100%; /* Ensure the photo does not exceed its container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Rounded edges for a circular photo */
+  max-width: 300px; /* Limit image to 300px wide */
+  width: 100%; /* Ensure the width adjusts responsively */
+  display: block; /* Prevents extra space below inline-block images */
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.role-photo:hover img {
+  transform: rotate(5deg); /* Tilt image by 5 degrees on hover */
+}
+
+.role p {
+  font-size: 50px; /* Larger font size */
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .role p {
+      font-size: 24px; /* Adjust font size for smaller screens */
+  }
+}
