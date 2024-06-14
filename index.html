@@ -7,10 +7,11 @@
     <link rel="icon" type="image/x-icon" href="media/favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/splash.css">
+    <link rel="stylesheet" href="css/typewriter.css"> <!-- Include typewriter.css -->
 </head>
 <body>
     <div class="splash" id="splashScreen">
-        <img src="media/loading.gif" alt="Loading..." />
+        <img src="media/loading.gif" alt="Loading...">
     </div>
 
     <header>
@@ -24,22 +25,17 @@
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Short bio goes here.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Details about projects go here.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Contact details go here.</p>
-    </section>
+    <div class="role">
+        <div class="role-text">
+            <p>I am a <span id="roles"></span></p>
+        </div>
+        <div class="role-photo">
+            <img src="media/menew.jpg" alt="Your Photo">
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
     <script src="js/splash.js"></script>
+    <script src="js/typewriter.js"></script> <!-- Include typewriter.js -->
 </body>
 </html>
