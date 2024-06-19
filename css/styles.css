@@ -18,6 +18,11 @@ header {
     letter-spacing: 1.5px;
 }
 
+header h1 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
