@@ -82,34 +82,3 @@ section h2 {
       margin: 5px 0;
   }
 }
-
-/* WebKit browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-  width: 12px; /* Width of the entire scrollbar */
-}
-
-::-webkit-scrollbar-track {
-  background: transparent; /* Transparent background for the scrollbar track */
-  border-radius: 10px; /* Rounded corners of the track */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 149, 0, 0.5); /* Semi-transparent blue color for the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners of the thumb */
-  border: 3px solid transparent; /* Space around the thumb with a transparent border */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 149, 0, 0.5); /* Semi-transparent blue color for the scrollbar thumb */
-}
-
-/* Firefox */
-* {
-  scrollbar-width: thin; /* Width of the scrollbar */
-  scrollbar-color: rgba(255, 149, 0, 0.5) transparent; /* Thumb (semi-transparent blue) and track (transparent) color */
-}
-
-/* IE 10+ */
-body {
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
