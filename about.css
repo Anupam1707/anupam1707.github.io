@@ -7,38 +7,47 @@ body {
 }
 
 header {
-  background: #007acc;
+  background-color: #2c3e50; /* Darker blue-gray */
   color: white;
-  padding: 20px 0;
+  padding: 30px 0;
   text-align: center;
+  font-size: 28px; /* Increased font size */
+  font-weight: bold;
+  letter-spacing: 1.5px;
 }
 
-nav {
-  background: #333;
-  color: white;
+header h2 {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 nav ul {
   list-style: none;
-  margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
+  margin: 0;
+  text-align: center;
+  background-color: #3498db; /* Vibrant blue */
+  padding: 15px 0;
 }
 
 nav ul li {
-  margin: 0 15px;
+  display: inline;
+  margin: 0 25px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  padding: 10px;
-  display: block;
+  font-size: 20px; /* Increased font size */
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  background: #575757;
+  color: #e74c3c; /* Bright red */
+}
+
+nav ul li a[target="_blank"]::after {
+  content: " \2197"; /* Unicode for a new window icon */
 }
 
 main {
@@ -60,7 +69,7 @@ footer {
   padding: 10px 0;
 }
 
-h2 {
+section h2 {
   border-bottom: 2px solid #007acc;
   padding-bottom: 10px;
 }
@@ -72,4 +81,35 @@ h2 {
   nav ul li {
       margin: 5px 0;
   }
+}
+
+/* WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Transparent background for the scrollbar track */
+  border-radius: 10px; /* Rounded corners of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 149, 0, 0.5); /* Semi-transparent blue color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners of the thumb */
+  border: 3px solid transparent; /* Space around the thumb with a transparent border */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 149, 0, 0.5); /* Semi-transparent blue color for the scrollbar thumb */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin; /* Width of the scrollbar */
+  scrollbar-color: rgba(255, 149, 0, 0.5) transparent; /* Thumb (semi-transparent blue) and track (transparent) color */
+}
+
+/* IE 10+ */
+body {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
