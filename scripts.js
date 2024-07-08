@@ -1,4 +1,4 @@
-fetch('https://portfolio-backend-web.onrender.com/certificates')
+fetch('https://portfolio-backend-api-nwhk.onrender.com/certificates')
     .then(response => response.json())
     .then(data => displayCertificates(data));
 
