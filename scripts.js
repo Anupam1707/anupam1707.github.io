@@ -13,6 +13,6 @@ function displayCertificates(certificates) {
             <h3>${certificate.title}</h3>
             <p>${certificate.description}</p>
         `;
-        container.appendChild(certDiv);
+        container.prepend(certDiv); // Use prepend to add the new element at the top
     });
 }
