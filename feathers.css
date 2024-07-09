@@ -6,6 +6,7 @@
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #DC3545;
 }
 
 .certificate:nth-child(odd) {
@@ -16,11 +17,28 @@
   align-self: flex-end;
 }
 
-.certificate h3 p {
-  text-color: white;
+.certificate {
+  color: white;
 }
+.certificate h2 {
+  color: white;
+  font-size: 28px;
+}
+
+.certificate p {
+  color: white;
+  font-size: 20px;
+}
+
 #certificates-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#loading {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
 }
