@@ -5,7 +5,7 @@ fetch('https://portfolio-backend-api-nwhk.onrender.com/certificates')
 
 function displayCertificates(certificates) {
     const container = document.getElementById('certificates-container');
-    certificates.forEach((certificate, index) => {
+    certificates.reverse().forEach((certificate, index) => {
         const certDiv = document.createElement('div');
         certDiv.className = 'certificate';
         certDiv.innerHTML = `
@@ -13,6 +13,6 @@ function displayCertificates(certificates) {
             <h3>${certificate.title}</h3>
             <p>${certificate.description}</p>
         `;
-        container.prepend(certDiv); // Use prepend to add the new element at the top
+        container.appendChild(certDiv);
     });
 }
