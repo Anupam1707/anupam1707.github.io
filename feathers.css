@@ -16,6 +16,9 @@
   align-self: flex-end;
 }
 
+.certificate h3 p {
+  text-color: white;
+}
 #certificates-container {
   display: flex;
   flex-direction: column;
