@@ -29,6 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             projectsContainer.appendChild(projectElement);
-        });
+        }
     }
 });
