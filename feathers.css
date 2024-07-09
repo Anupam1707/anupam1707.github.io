@@ -17,7 +17,6 @@
   align-self: flex-end;
 }
 
-<<<<<<< HEAD
 .certificate {
   color: white;
 }
@@ -31,8 +30,6 @@
   font-size: 20px;
 }
 
-=======
->>>>>>> 5e18a519458f1ba992e212959619e0cf3b84dc68
 #certificates-container {
   display: flex;
   flex-direction: column;
