@@ -16,7 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayProjects(projects) {
         projectsContainer.innerHTML = ''; // Clear the container first
         for (let i = projects.length - 1; i >= 0; i--) {
+<<<<<<< HEAD
             const project = projects[i]; // Use `project` here instead of `certificate`
+=======
+            const project = projects[i];
+>>>>>>> b7f58af06541113e73fd182f10b55a405bdfebdc
             const projectElement = document.createElement('div');
             projectElement.className = 'project';
             projectElement.innerHTML = `
