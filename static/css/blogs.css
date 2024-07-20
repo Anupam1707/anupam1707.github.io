@@ -7,9 +7,9 @@
   align-items: center;
 }
 .blog-post img {
-  width: 626px;
-  height: 355px;
-  max-width: 600px;
+  max-height: 355px;
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
   margin-right: 16px;
 }
@@ -46,6 +46,9 @@
   }
   .blog-post img {
       margin: 0 0 16px 0;
+      max-height: 355px; /* Maximum height */
+      max-width: 100%;   /* Maximum width of 100% of its container */
+      height: auto;      /* Auto-adjust height to maintain aspect ratio */
   }
   .blog-content {
     max-width: 100%;
