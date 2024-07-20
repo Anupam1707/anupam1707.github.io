@@ -5,18 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('https://portfolio-backend-api-nwhk.onrender.com/certificates')
         .then(response => response.json())
         .then(data => {
-            displayCertificates(data);
+            const sortedData = sortCertificatesByDate(data);
+            displayCertificates(sortedData);
             loadingIndicator.style.display = 'none';
         })  
         .catch(error => {
             console.error('Error fetching certificates:', error);
             loadingIndicator.innerText = 'Failed to load certificates.';
-        })
+        });
+
+    function sortCertificatesByDate(certificates) {
+        return certificates.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
 
     function displayCertificates(certificates) {
         container.innerHTML = ''; // Clear the container first
-        for (let i = certificates.length - 1; i >= 0; i--) {
-            const certificate = certificates[i];
+        certificates.forEach(certificate => {
             const certDiv = document.createElement('div');
             certDiv.className = 'certificate';
             certDiv.innerHTML = `
@@ -25,6 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>${certificate.description}</p>
             `;
             container.appendChild(certDiv);
-        }
+        });
     }
 });
