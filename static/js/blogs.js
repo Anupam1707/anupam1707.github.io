@@ -20,12 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const blogElement = document.createElement('div');
         blogElement.className = 'blog-post';
         blogElement.innerHTML = `
-          <a href="blog.html?title=${encodeURIComponent(blog.title)}">
+          <a href="blog.html?query=${encodeURIComponent(blog.title)}">
             <img src="${blog.imageurl}" alt="${blog.title}" class="blog-image">
           </a>
           <div class="blog-content">
             <h2>${blog.title}</h2>
-            <p>${blog.content}</p>
+            <h3>By ${blog.author}</h3>
+            <h3>${blog.date}</h3>
+            <p>${blog.description}</p>
           </div>
         `;
         blogListContainer.appendChild(blogElement);

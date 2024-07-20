@@ -1,0 +1,7 @@
+mongodb+srv://tiak:mongodb.ak17@portfolio-dataset.ha4l0ka.mongodb.net/certificates
+
+db.certificates.insertOne({
+	"title": "",
+	"description":"",
+	"imageUrl":""
+})

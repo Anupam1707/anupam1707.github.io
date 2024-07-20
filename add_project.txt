@@ -1,0 +1,9 @@
+mongodb+srv://tiak:mongodb.ak17@portfolio-dataset.ha4l0ka.mongodb.net/projects
+
+db.projects.insertOne({
+	"title":"",
+	"description":"",
+	"date":"",
+	"imageUrl":"",
+	"link":""
+})
