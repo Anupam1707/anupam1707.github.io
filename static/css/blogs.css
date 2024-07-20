@@ -7,7 +7,8 @@
   align-items: center;
 }
 .blog-post img {
-  width: 100%;
+  width: 626px;
+  height: 355px;
   max-width: 600px;
   border-radius: 8px;
   margin-right: 16px;
@@ -17,29 +18,18 @@
 }
 .blog-post h2 {
   color: white;
+  font-size: 30px;
   margin: 0 0 8px;
 }
 .blog-post h3 {
   color: white;
+  font-size: 18px;
   margin: 0 0 8px;
 }
 .blog-post p {
   color: white;
   font-size: 20px;
   margin: 0 0 16px;
-}
-.blog-post button {
-  padding: 8px 16px;
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
-}
-.blog-post button:hover {
-  background-color: #0056b3;
 }
 
 #loading {
