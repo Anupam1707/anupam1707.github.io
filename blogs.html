@@ -7,7 +7,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-ERWSH7D06H');
     </script>
     <meta charset="UTF-8">
@@ -23,15 +22,28 @@
         <h2>Welcome to Developer's Digest</h2>
         <nav>
             <ul>
-              <li><a href="home">Home</a></li>
-              <li><a href="about">About Me</a></li>
-              <li><a href="projects">Projects</a></li>
-              <li><a href="feathers">Feathers</a></li>
-              <li><a href="blogs">Blogs</a></li>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="feathers.html">Feathers</a></li>
+              <li><a href="blogs.html">Blogs</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <div id="dropdown-container">
+            <label for="category-select">Category:</label>
+            <select id="category-select">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+            
+            <label for="sort-select">Sort By:</label>
+            <select id="sort-select">
+                <option value="latest">Latest</option>
+                <option value="oldest">Oldest</option>
+            </select>
+        </div>
+
         <div id="loading">Loading blog posts.....</div>
         <div id="blog-list-container"></div>
     </main>
