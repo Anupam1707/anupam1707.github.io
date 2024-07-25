@@ -32,6 +32,11 @@
   margin: 0 0 16px;
 }
 
+/* .blog-pin {
+  max-width: 100%;
+  text-align: center;
+} */
+
 #loading {
   font-size: 1.5em;
   text-align: center;
@@ -67,6 +72,11 @@
   }
   
   .blog-desc {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .blog-pin {
     max-width: 100%;
     text-align: center;
   }

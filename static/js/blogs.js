@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Blogs fetched:', blogs);
         const filteredBlogs = filterBlogsByCategory(blogs);
         console.log('Filtered blogs:', filteredBlogs);
-        const sortedBlogs = sortBlogsByDate(filteredBlogs);
+        const sortedBlogs = sortBlogs(filteredBlogs);
         console.log('Sorted blogs:', sortedBlogs);
         displayBlogs(sortedBlogs);
         loadingIndicator.style.display = 'none';
@@ -69,10 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return filtered;
   }
 
-  function sortBlogsByDate(blogs) {
+  function sortBlogs(blogs) {
     const sortOrder = sortSelect.value;
-    console.log('Sorting blogs by date:', sortOrder);
+    console.log('Sorting blogs with pinned posts first, then by date:', sortOrder);
     const sorted = blogs.sort((a, b) => {
+      if (a.pinned === "true" && b.pinned !== "true") return -1;
+      if (a.pinned !== "true" && b.pinned === "true") return 1;
       return sortOrder === 'latest' ? new Date(b.date) - new Date(a.date) : new Date(a.date) - new Date(b.date);
     });
     console.log('Blogs after sorting:', sorted);
@@ -96,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${blog.imageurl}" alt="${blog.title}" class="blog-image">
           </a>
           <div class="blog-content">
+            ${blog.pinned === "true" ? '<p class="blog-pin">Pinned by Author &#128204;</p>' : ''}
             <h2 class="blog-title">${blog.title}</h2>
             <h3 class="blog-author">By ${blog.author}</h3>
             <h3 class="blog-date">${blog.dateString}</h3>

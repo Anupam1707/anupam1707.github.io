@@ -1,19 +1,12 @@
 mongodb+srv://tiak:mongodb.ak17@portfolio-dataset.ha4l0ka.mongodb.net/blogs
 
 db.blogs.insertOne({
-"title":"Test Blog with Author and Date",
+"title":"Welcome to Developer's Digest!",
 "author":"Anupam Kanoongo",
-"imageurl":"https://img.freepik.com/free-photo/online-message-blog-chat-communication-envelop-graphic-icon-concept_53876-139717.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user",
-"date":"19th June 2024",
-"description":"The detailed blog on Lorem Ipsum",
-"content":"<b>What is Lorem Ipsum?</b>
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-
-Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+"imageurl":"https://st4.depositphotos.com/1010735/21836/v/450/depositphotos_218363620-stock-illustration-autumn-welcome-sign-colorful-maple.jpg",
+"description":"Introducing Developer's Digest where you'll find all kind of Tech related content",
+"content":"Hello, Tech Enthusiasts!\n\nWelcome to Developer's Digest, the new home for all our latest posts and updates!\n\nWhat’s Developer's Digest?\nAs part of our evolution from 'Tech Info' to Developer AK, we've launched this blog to provide you with even more valuable content. Developer's Digest is your go-to source for in-depth articles, tutorials, and insights into the world of technology and programming.\n\nWhat Can You Expect?\n--Deep Dives into Trending Tech:\xa0Stay updated with the latest advancements and innovations.\n--Comprehensive Programming Tutorials:\xa0Learn to code with step-by-step guides and practical examples.\n--Tips and Tricks for Developers:\xa0Enhance your skills with insider knowledge and expert advice.\n--Industry Insights:\xa0Get the latest news and analysis on tech industry trends.\n\nOur mission remains unchanged: to provide you with top-notch tech content and help you become a better developer.\n\nBe sure to bookmark Developer's Digest\xa0and follow along for fresh content and resources! Your support has been incredible, and we’re excited to continue this journey with you under our new banner, Developer AK.\n\nLet’s code and innovate together!\nStay tuned for more amazing content.\nThank you for being a part of our community!",
+"date":"2024-05-28",
+"dateString":"May 28, 2024",
+"category":"all"
 })
