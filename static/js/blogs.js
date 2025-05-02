@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function fetchBlogs() {
     console.log('Fetching blogs from API');
-    fetch('https://portfolio-backend-api-nwhk.onrender.com/blogs') // Replace with your actual backend URL for blogs
+    fetch('https://portfolio-backend-api-nwhk.onrender.com/blogs?api_key=ak1713') // Replace with your actual backend URL for blogs
       .then(response => response.json())
       .then(blogs => {
         console.log('Blogs fetched:', blogs);
