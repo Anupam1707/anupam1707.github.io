@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortSelect = document.getElementById('sort-select');
 
     function fetchProjs() {
-        fetch('https://portfolio-backend-api-nwhk.onrender.com/projects')
+        fetch('https://portfolio-backend-api-nwhk.onrender.com/projects?api_key=ak1713')
             .then(response => response.json())
             .then(projects => {
                 const sortedData = sortProjectsByDate(projects);
