@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 const ip = data.ip;
-                console.log(`Your IP Address : ${ip}`);
-                console.log(`API : https://portfolio-backend-api-nwhk.onrender.com/certificates?api_key=${ip}`);
                 return fetch(`https://portfolio-backend-api-nwhk.onrender.com/certificates?api_key=${ip}`);
             })
             .then(response => response.json())
