@@ -4,7 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortSelect = document.getElementById('sort-select');
 
     function fetchProjs() {
-        fetch('https://portfolio-backend-api-nwhk.onrender.com/projects?api_key=ak1713')
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ip = data.ip;
+                return fetch(`https://portfolio-backend-api-nwhk.onrender.com/projects?api_key=${ip}`);
+            })
             .then(response => response.json())
             .then(projects => {
                 const sortedData = sortProjectsByDate(projects);
