@@ -4,6 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const sortSelect = document.getElementById('sort-select');
 
     function fetchCerts() {
+        let ip;
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                ip = data.ip;
+                console.log(`Your IP Address : ${ip}`);
+            })
+            .catch(error => console.error('Error fetching IP:', error));
+
         fetch(`https://portfolio-backend-api-nwhk.onrender.com/certificates?api_key=${ip}`)
             .then(response => response.json())
             .then(certificates => {
@@ -40,14 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
             container.append(certDiv);
         });
     }
-
-    let ip;
-    fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
-        ip = data.ip;
-      })
-      .catch(error => console.error('Error fetching IP:', error));
 
     fetchCerts();
     sortSelect.addEventListener('change', fetchCerts);
