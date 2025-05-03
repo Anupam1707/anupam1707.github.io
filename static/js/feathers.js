@@ -4,28 +4,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const sortSelect = document.getElementById('sort-select');
 
     function fetchCerts() {
-        let ip;
         fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
-                ip = data.ip;
+                const ip = data.ip;
                 console.log(`Your IP Address : ${ip}`);
-            })
-            .catch(error => console.error('Error fetching IP:', error));
 
-        fetch(`https://portfolio-backend-api-nwhk.onrender.com/certificates?api_key=${ip}`)
+                return fetch(`https://portfolio-backend-api-nwhk.onrender.com/certificates?api_key=${ip}`);
+            })
             .then(response => response.json())
             .then(certificates => {
                 const sortedData = sortCertificatesByDate(certificates);
                 displayCertificates(sortedData);
                 loadingIndicator.style.display = 'none';
-            })  
+            })
             .catch(error => {
                 console.error('Error fetching certificates:', error);
                 loadingIndicator.innerText = 'Failed to load certificates.';
             });
     }
-    
+
     function sortCertificatesByDate(certificates) {
         const sortOrder = sortSelect.value;
         console.log('Sorting certificates by date:', sortOrder);
