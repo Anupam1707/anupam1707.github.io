@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const sorted = certificates.sort((a, b) => {
             return sortOrder === 'latest' ? new Date(b.date) - new Date(a.date) : new Date(a.date) - new Date(b.date);
         });
-        console.log('Certificates after sorting:', sorted);
         return sorted;
     }
 
