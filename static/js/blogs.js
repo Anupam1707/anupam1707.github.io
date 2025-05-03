@@ -43,8 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function fetchBlogs() {
-    console.log('Fetching blogs from API');
-    fetch('https://portfolio-backend-api-nwhk.onrender.com/blogs?api_key=ak1713') // Replace with your actual backend URL for blogs
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+         const ip = data.ip;
+         return fetch(`https://portfolio-backend-api-nwhk.onrender.com/blogs?api_key=${ip}`);
+      })      
       .then(response => response.json())
       .then(blogs => {
         console.log('Blogs fetched:', blogs);
