@@ -8,7 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return; // Exit the script to prevent further execution
   }
 
-  fetch('https://portfolio-backend-api-nwhk.onrender.com/blogs') // Replace with your actual backend URL for blogs
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+         const ip = data.ip;
+         return fetch(`https://portfolio-backend-api-nwhk.onrender.com/blogs?api_key=${ip}`);
+      })       // Replace with your actual backend URL for blogs
     .then(response => response.json())
     .then(blogs => {
       const blog = blogs.find(blog => blog.title === title);
