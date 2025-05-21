@@ -2,4 +2,5 @@ All,all
 Arduino,Arduino
 Raspberry PI,RaspberryPI
 Scratch,Scratch
-EV,EV
+Electric Vehicles,EV
+Artificial Intelligience,AI
