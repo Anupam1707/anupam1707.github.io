@@ -4,12 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sortSelect = document.getElementById('sort-select');
 
     function fetchCerts() {
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                const ip = data.ip;
-                return fetch(`https://github.pythonanywhere.com/certificates`);
-            })
+        fetch('https://github.pythonanywhere.com/certificates')
             .then(response => response.json())
             .then(certificates => {
                 const sortedData = sortCertificatesByDate(certificates);

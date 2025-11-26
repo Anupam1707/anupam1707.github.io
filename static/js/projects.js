@@ -4,12 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortSelect = document.getElementById('sort-select');
 
     function fetchProjs() {
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                const ip = data.ip;
-                return fetch(`https://github.pythonanywhere.com/projects`);
-            })
+        fetch('https://github.pythonanywhere.com/projects')
             .then(response => response.json())
             .then(projects => {
                 const sortedData = sortProjectsByDate(projects);

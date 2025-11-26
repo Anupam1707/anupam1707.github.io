@@ -43,12 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function fetchBlogs() {
-    fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
-         const ip = data.ip;
-         return fetch(`https://github.pythonanywhere.com/blogs`);
-      })      
+    fetch('https://github.pythonanywhere.com/blogs')
       .then(response => response.json())
       .then(blogs => {
         console.log('Blogs fetched:', blogs);
