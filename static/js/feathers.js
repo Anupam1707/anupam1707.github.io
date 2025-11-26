@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 const ip = data.ip;
-                return fetch(`https://portfolio-backend-api-nwhk.onrender.com/certificates?api_key=${ip}`);
+                return fetch(`https://github.pythonanywhere.com/certificates`);
             })
             .then(response => response.json())
             .then(certificates => {
