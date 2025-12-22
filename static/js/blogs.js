@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function fetchBlogs() {
-    fetch('https://github.pythonanywhere.com/blogs')
+    fetch('https://portfolio-backend-five-weld.vercel.app/logs')
       .then(response => response.json())
       .then(blogs => {
         console.log('Blogs fetched:', blogs);

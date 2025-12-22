@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sortSelect = document.getElementById('sort-select');
 
     function fetchCerts() {
-        fetch('https://github.pythonanywhere.com/certificates')
+        fetch('https://portfolio-backend-five-weld.vercel.app/certificates')
             .then(response => response.json())
             .then(certificates => {
                 const sortedData = sortCertificatesByDate(certificates);

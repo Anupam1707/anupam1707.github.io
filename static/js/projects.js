@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortSelect = document.getElementById('sort-select');
 
     function fetchProjs() {
-        fetch('https://github.pythonanywhere.com/projects')
+        fetch('https://portfolio-backend-five-weld.vercel.app/projects')
             .then(response => response.json())
             .then(projects => {
                 const sortedData = sortProjectsByDate(projects);
