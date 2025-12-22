@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         splash.classList.add('hide');
         setTimeout(function() {
-            window.location.href = 'home';
+            window.location.href = 'home.html';
         }, 1000);
     }, 3000);
 });
