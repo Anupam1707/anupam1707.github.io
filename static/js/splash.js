@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadingText.style.cssText = `
         position: absolute;
         bottom: 150px;
-        color: #00ffff;
+        color: #6366f1;
         font-size: 1.2rem;
         font-weight: 500;
         letter-spacing: 3px;
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         .splash::after {
             animation: loadBar 3s ease-out forwards;
-            background: linear-gradient(90deg, #00ffff, #00ff88, #00d4ff) !important;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #818cf8) !important;
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.6) !important;
         }
     `;
