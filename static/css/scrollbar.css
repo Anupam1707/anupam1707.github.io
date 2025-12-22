@@ -1,30 +1,32 @@
-/* WebKit browsers (Chrome, Safari, Edge) */
+/* Cyberpunk Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px; /* Width of the entire scrollbar */
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; /* Transparent background for the scrollbar track */
-  border-radius: 10px; /* Rounded corners of the track */
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ff5722; /* Semi-transparent blue color for the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners of the thumb */
-  border: 3px solid transparent; /* Space around the thumb with a transparent border */
+    background: linear-gradient(180deg, #60a5fa 0%, #a78bfa 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(30, 41, 59, 0.5);
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #ff5722; /* Semi-transparent blue color for the scrollbar thumb */
+    background: linear-gradient(180deg, #7cb3ff 0%, #b897f7 100%);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
 }
 
 /* Firefox */
 * {
-  scrollbar-width: thin; /* Width of the scrollbar */
-  scrollbar-color: #ff5722 transparent; /* Thumb (semi-transparent blue) and track (transparent) color */
+    scrollbar-width: thin;
+    scrollbar-color: #60a5fa rgba(30, 41, 59, 0.5);
 }
 
-/* IE 10+ */
-body {
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }

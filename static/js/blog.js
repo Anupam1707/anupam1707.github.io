@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.json())
     .then(data => {
          const ip = data.ip;
-         return fetch(`https://portfolio-backend-api-nwhk.onrender.com/blogs?api_key=${ip}`);
+         return fetch(`https://portfolio-backend-five-weld.vercel.app/blogs?api_key=${ip}`);
       })       // Replace with your actual backend URL for blogs
     .then(response => response.json())
     .then(blogs => {

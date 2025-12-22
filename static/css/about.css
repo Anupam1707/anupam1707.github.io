@@ -1,84 +1,136 @@
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-  color: #333;
-}
-
-header {
-  background-color: #2c3e50; /* Darker blue-gray */
-  color: white;
-  padding: 30px 0;
-  text-align: center;
-  font-size: 28px; /* Increased font size */
-  font-weight: bold;
-  letter-spacing: 1.5px;
-}
-
-header h2 {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  background-color: #3498db; /* Vibrant blue */
-  padding: 15px 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 25px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 20px; /* Increased font size */
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #e74c3c; /* Bright red */
-}
-
-nav ul li a[target="_blank"]::after {
-  content: " \2197"; /* Unicode for a new window icon */
+/* About Page - uses shared header from home.css */\nmain {\n    margin-top: 80px;\n    padding: 40px 20px;\n}
+    border-color: #5b9cff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(91, 156, 255, 0.5);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 main {
-  padding: 20px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section {
-  background: white;
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(91, 156, 255, 0.3);
+    margin: 30px 0;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(91, 156, 255, 0.1);
+    animation: slideUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+    position: relative;
+    overflow: hidden;
 }
 
-footer {
-  background: #007acc;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #5b9cff, transparent);
+    animation: scanline 3s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+/* About Page - uses shared header from home.css */
+main {
+    margin-top: 80px;
+    padding: 40px 20px;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 section h2 {
-  border-bottom: 2px solid #007acc;
-  padding-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #5b9cff 0%, rgba(255, 255, 255, 0.9) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 2px solid rgba(91, 156, 255, 0.3);
+    padding-bottom: 15px;
+    
+    letter-spacing: 0.5px;
 }
 
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(0, 255, 200, 0.9);
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+section ul li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+    color: rgba(0, 255, 200, 0.9);
+}
+
+section ul li::before {
+    content: '►';
+    position: absolute;
+    left: 0;
+    color: #5b9cff;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(91, 156, 255, 0.8);
+}
+
+footer {
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid #5b9cff;
+    color: #5b9cff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    box-shadow: 0 -5px 20px rgba(91, 156, 255, 0.2);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  nav ul {
-      flex-direction: column;
-  }
-  nav ul li {
-      margin: 5px 0;
-  }
+    nav ul {
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    section {
+        padding: 25px;
+        margin: 20px 0;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    header .header-content h2 {
+        font-size: 2rem;
+    }
 }
