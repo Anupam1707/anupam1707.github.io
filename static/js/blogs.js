@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function fetchBlogs() {
-    fetch('https://portfolio-backend-five-weld.vercel.app/logs')
+    fetch('https://portfolio-backend-five-weld.vercel.app/blogs')
       .then(response => response.json())
       .then(blogs => {
         console.log('Blogs fetched:', blogs);
