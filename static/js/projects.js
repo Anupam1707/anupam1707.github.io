@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => {
                 console.error('Error fetching projects:', error);
                 loadingIndicator.innerText = `Failed to load projects: ${error.message}`;
-                loadingIndicator.style.color = '#ff0080';
+                loadingIndicator.style.color = '#ff0a54';
             });
     }
 

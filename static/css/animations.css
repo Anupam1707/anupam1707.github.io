@@ -82,19 +82,19 @@
 /* Glow Animations */
 @keyframes glow {
     0%, 100% {
-        box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
     }
     50% {
-        box-shadow: 0 0 40px rgba(176, 38, 255, 0.7);
+        box-shadow: 0 0 40px rgba(247, 147, 30, 0.7);
     }
 }
 
 @keyframes textGlow {
     0%, 100% {
-        text-shadow: 0 0 10px rgba(0, 245, 255, 0.6);
+        text-shadow: 0 0 10px rgba(255, 107, 53, 0.6);
     }
     50% {
-        text-shadow: 0 0 20px rgba(176, 38, 255, 0.9);
+        text-shadow: 0 0 20px rgba(247, 147, 30, 0.9);
     }
 }
 
@@ -239,7 +239,7 @@
 }
 
 .hover-glow:hover {
-    box-shadow: 0 0 30px rgba(0, 245, 255, 0.7);
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.7);
 }
 
 .hover-scale {

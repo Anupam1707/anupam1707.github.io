@@ -49,7 +49,7 @@
 .orb-1 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, #00f5ff 0%, transparent 70%);
+    background: radial-gradient(circle, #ff6b35 0%, transparent 70%);
     top: -250px;
     left: -250px;
     animation-delay: 0s;
@@ -58,7 +58,7 @@
 .orb-2 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, #b026ff 0%, transparent 70%);
+    background: radial-gradient(circle, #f7931e 0%, transparent 70%);
     bottom: -200px;
     right: -200px;
     animation-delay: -7s;
@@ -67,7 +67,7 @@
 .orb-3 {
     width: 450px;
     height: 450px;
-    background: radial-gradient(circle, #ff0080 0%, transparent 70%);
+    background: radial-gradient(circle, #ff0a54 0%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -110,8 +110,8 @@
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 1.5rem;
-    background: rgba(0, 245, 255, 0.15);
-    border: 1px solid rgba(0, 245, 255, 0.4);
+    background: rgba(255, 107, 53, 0.15);
+    border: 1px solid rgba(255, 107, 53, 0.4);
     border-radius: 50px;
     backdrop-filter: blur(10px);
     animation: slideDown 0.8s ease-out, pulse 2s ease-in-out 1s infinite;
@@ -120,9 +120,9 @@
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #00f5ff;
+    background: #ff6b35;
     border-radius: 50%;
-    box-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff;
+    box-shadow: 0 0 10px #ff6b35, 0 0 20px #ff6b35;
     animation: ping 1.5s ease-in-out infinite;
 }
 
@@ -131,8 +131,8 @@
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #00f5ff;
-    text-shadow: 0 0 10px rgba(0, 245, 255, 0.6);
+    color: #ff6b35;
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.6);
 }
 
 @keyframes ping {
@@ -173,7 +173,7 @@
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(0, 245, 255, 0.4) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.4) 0%, transparent 70%);
     filter: blur(60px);
     animation: glowPulse 3s ease-in-out infinite;
     pointer-events: none;
@@ -211,7 +211,7 @@
 
 .brand-last {
     display: block;
-    background: linear-gradient(135deg, #00f5ff 0%, #b026ff 50%, #ff0080 100%);
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff0a54 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -292,18 +292,18 @@
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, 
-        #00f5ff 0%, 
-        #b026ff 25%, 
-        #ff0080 50%, 
-        #b026ff 75%, 
-        #00f5ff 100%
+        #ff6b35 0%, 
+        #f7931e 25%, 
+        #ff0a54 50%, 
+        #f7931e 75%, 
+        #ff6b35 100%
     );
     background-size: 200% 100%;
     border-radius: 10px;
     transition: width 0.3s ease;
     animation: shimmerBar 2s linear infinite;
-    box-shadow: 0 0 20px rgba(0, 245, 255, 0.7),
-                0 0 40px rgba(0, 245, 255, 0.5);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.7),
+                0 0 40px rgba(255, 107, 53, 0.5);
 }
 
 @keyframes shimmerBar {
@@ -350,7 +350,7 @@
 .loading-percent {
     font-weight: 700;
     font-size: 1.5rem;
-    background: linear-gradient(135deg, #00f5ff, #b026ff);
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -373,8 +373,8 @@
     width: 100%;
     height: 200px;
     background-image: 
-        linear-gradient(rgba(0, 245, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 245, 255, 0.08) 1px, transparent 1px);
+        linear-gradient(rgba(255, 107, 53, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 53, 0.08) 1px, transparent 1px);
     background-size: 50px 50px;
     opacity: 0.5;
     animation: gridMove 20s linear infinite;

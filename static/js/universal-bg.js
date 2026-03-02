@@ -13,8 +13,8 @@ class ParticleSystem {
         // Configurable options
         this.config = {
             particleCount: options.particleCount || 100,
-            particleColor: options.particleColor || 'rgba(0, 245, 255, 0.9)',
-            connectionColor: options.connectionColor || 'rgba(0, 245, 255, 0.2)',
+            particleColor: options.particleColor || 'rgba(255, 107, 53, 0.9)',
+            connectionColor: options.connectionColor || 'rgba(255, 107, 53, 0.2)',
             connectionDistance: options.connectionDistance || 150,
             particleSize: options.particleSize || 2,
             speed: options.speed || 0.5,
@@ -159,7 +159,7 @@ class CustomCursor {
         this.options = {
             enabled: options.enabled !== false,
             trailLength: options.trailLength || 20,
-            color: options.color || '#00f5ff'
+            color: options.color || '#ff6b35'
         };
         
         if (this.options.enabled && !this.isTouchDevice()) {

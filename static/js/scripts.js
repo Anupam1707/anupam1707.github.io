@@ -23,12 +23,12 @@ function createParticles() {
             position: absolute;
             width: ${size}px;
             height: ${size}px;
-            background: linear-gradient(135deg, #00f5ff, #b026ff);
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
             border-radius: 50%;
             left: ${startX}%;
             bottom: -10px;
             animation: rise ${duration}s linear ${delay}s infinite;
-            box-shadow: 0 0 ${size * 2}px rgba(0, 245, 255, 0.6);
+            box-shadow: 0 0 ${size * 2}px rgba(255, 107, 53, 0.6);
         `;
         
         particlesContainer.appendChild(particle);

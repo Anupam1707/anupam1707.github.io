@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 console.error('Error fetching certificates:', error);
                 loadingIndicator.innerText = `Failed to load certificates: ${error.message}`;
-                loadingIndicator.style.color = '#ff0080';
+                loadingIndicator.style.color = '#ff0a54';
             });
     }
 

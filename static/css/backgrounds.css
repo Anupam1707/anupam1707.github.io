@@ -28,7 +28,7 @@
 .bg-orb-1 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, #00f5ff 0%, transparent 70%);
+    background: radial-gradient(circle, #ff6b35 0%, transparent 70%);
     top: -250px;
     left: -250px;
     animation-delay: 0s;
@@ -37,7 +37,7 @@
 .bg-orb-2 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, #b026ff 0%, transparent 70%);
+    background: radial-gradient(circle, #f7931e 0%, transparent 70%);
     bottom: -200px;
     right: -200px;
     animation-delay: -7s;
@@ -46,7 +46,7 @@
 .bg-orb-3 {
     width: 450px;
     height: 450px;
-    background: radial-gradient(circle, #ff0080 0%, transparent 70%);
+    background: radial-gradient(circle, #ff0a54 0%, transparent 70%);
     top: 50%;
     right: -225px;
     animation-delay: -14s;
@@ -77,38 +77,38 @@ main {
 
 /* Glassmorphism Cards Enhancement */
 .glass-card {
-    background: rgba(10, 1, 24, 0.7);
+    background: rgba(26, 14, 10, 0.7);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 245, 255, 0.3);
+    border: 1px solid rgba(255, 107, 53, 0.3);
     border-radius: var(--radius-lg);
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(0, 245, 255, 0.2),
-        inset 0 1px 0 rgba(0, 245, 255, 0.1);
+        0 0 20px rgba(255, 107, 53, 0.2),
+        inset 0 1px 0 rgba(255, 107, 53, 0.1);
     transition: all var(--transition-smooth);
 }
 
 .glass-card:hover {
-    border-color: rgba(0, 245, 255, 0.6);
+    border-color: rgba(255, 107, 53, 0.6);
     box-shadow: 
         0 12px 48px rgba(0, 0, 0, 0.6),
-        0 0 60px rgba(0, 245, 255, 0.4),
-        inset 0 1px 0 rgba(0, 245, 255, 0.2);
+        0 0 60px rgba(255, 107, 53, 0.4),
+        inset 0 1px 0 rgba(255, 107, 53, 0.2);
     transform: translateY(-4px);
 }
 
 /* Glow Text */
 .glow-text {
-    text-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
+    text-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
     animation: textGlow 3s ease-in-out infinite;
 }
 
 @keyframes textGlow {
     0%, 100% {
-        text-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
+        text-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
     }
     50% {
-        text-shadow: 0 0 40px rgba(0, 245, 255, 1);
+        text-shadow: 0 0 40px rgba(255, 107, 53, 1);
     }
 }
 
@@ -129,7 +129,7 @@ main {
 /* Gradient Border Animation */
 .gradient-border {
     position: relative;
-    background: linear-gradient(135deg, rgba(10, 1, 24, 0.8), rgba(21, 1, 37, 0.6));
+    background: linear-gradient(135deg, rgba(26, 14, 10, 0.8), rgba(45, 24, 16, 0.6));
     border: 2px solid transparent;
     background-clip: padding-box;
 }
@@ -141,7 +141,7 @@ main {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(135deg, #00f5ff, #b026ff, #ff0080);
+    background: linear-gradient(135deg, #ff6b35, #f7931e, #ff0a54);
     border-radius: inherit;
     z-index: -1;
     opacity: 0.6;

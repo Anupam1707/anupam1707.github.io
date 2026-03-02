@@ -1,22 +1,22 @@
 /* CSS Variables for Consistency */
 :root {
     /* Modern Neon Color Palette */
-    --color-primary: #00f5ff;
-    --color-primary-light: #5ffbff;
-    --color-primary-dark: #00d4e6;
-    --color-secondary: #b026ff;
-    --color-secondary-light: #c966ff;
-    --color-secondary-dark: #8800cc;
-    --color-accent: #ff0080;
-    --color-accent-light: #ff4da6;
-    --color-accent-dark: #cc0066;
-    --color-tertiary: #39ff14;
+    --color-primary: #ff6b35;
+    --color-primary-light: #ff8c5f;
+    --color-primary-dark: #e05520;
+    --color-secondary: #f7931e;
+    --color-secondary-light: #ffb84d;
+    --color-secondary-dark: #d67d0a;
+    --color-accent: #ff0a54;
+    --color-accent-light: #ff4d7d;
+    --color-accent-dark: #d60045;
+    --color-tertiary: #ff6b35;
     
     /* Background Colors */
-    --bg-dark: #0a0118;
-    --bg-darker: #150125;
-    --bg-card: rgba(21, 1, 37, 0.75);
-    --bg-overlay: rgba(10, 1, 24, 0.9);
+    --bg-dark: #1a0e0a;
+    --bg-darker: #2d1810;
+    --bg-card: rgba(45, 24, 16, 0.75);
+    --bg-overlay: rgba(26, 14, 10, 0.9);
     
     /* Text Colors */
     --text-primary: #ffffff;
@@ -24,15 +24,15 @@
     --text-muted: rgba(148, 163, 184, 0.8);
     
     /* Border Colors */
-    --border-light: rgba(0, 245, 255, 0.3);
-    --border-medium: rgba(0, 245, 255, 0.5);
-    --border-strong: rgba(176, 38, 255, 0.7);
+    --border-light: rgba(255, 107, 53, 0.3);
+    --border-medium: rgba(255, 107, 53, 0.5);
+    --border-strong: rgba(247, 147, 30, 0.7);
     
     /* Shadow Colors */
     --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.5);
     --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.6);
     --shadow-lg: 0 25px 70px rgba(0, 0, 0, 0.8);
-    --shadow-glow: 0 0 50px rgba(0, 245, 255, 0.6);
+    --shadow-glow: 0 0 50px rgba(255, 107, 53, 0.6);
     
     /* Typography */
     --font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -79,7 +79,7 @@ html {
 
 body {
     font-family: var(--font-family);
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+    background: linear-gradient(135deg, #1a0e0a 0%, #2d1810 50%, #3d2015 100%);
     background-attachment: fixed;
     color: var(--text-primary);
     overflow-x: hidden;
@@ -98,9 +98,9 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.15), transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(176, 38, 255, 0.15), transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(255, 0, 128, 0.1), transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.15), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(247, 147, 30, 0.15), transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(255, 10, 84, 0.1), transparent 50%);
     pointer-events: none;
     animation: gradientShift 15s ease infinite;
     z-index: -1;
