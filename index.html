@@ -14,13 +14,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anupam Kanoongo - Portfolio</title>
     <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/typography.css">
+    <link rel="stylesheet" href="static/css/utilities.css">
     <link rel="stylesheet" href="static/css/splash.css">
+    <link rel="stylesheet" href="static/css/cursor.css">
 </head>
 <body>
     <div class="splash" id="splashScreen">
-        <img src="media/loading.gif" alt="Loading...">
+        <!-- Canvas for particle effects -->
+        <canvas id="particleCanvas"></canvas>
+        
+        <!-- Main content -->
+        <div class="splash-content">
+            <!-- Animated badge -->
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                <span class="status-text">INITIALIZING EXPERIENCE</span>
+            </div>
+            
+            <!-- Logo/Brand -->
+            <div class="splash-logo">
+                <div class="logo-glow"></div>
+                <h1 class="brand-name">
+                    <span class="brand-first">Anupam</span>
+                    <span class="brand-last">Kanoongo</span>
+                </h1>
+                <p class="brand-tagline">Portfolio & Creative Works</p>
+            </div>
+            
+            <!-- Loading progress -->
+            <div class="loading-container">
+                <div class="loading-bar-wrapper">
+                    <div class="loading-bar" id="loadingBar"></div>
+                    <div class="loading-glow"></div>
+                </div>
+                <div class="loading-stats">
+                    <span class="loading-percent" id="loadingPercent">0%</span>
+                    <span class="loading-status" id="loadingStatus">Loading assets...</span>
+                </div>
+            </div>
+            
+            <!-- Decorative elements -->
+            <div class="deco-grid"></div>
+        </div>
+        
+        <!-- Background gradients -->
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
     </div>
+    
     <script src="static/js/splash.js"></script>
     <script src="static/js/scripts.js"></script>
 </body>

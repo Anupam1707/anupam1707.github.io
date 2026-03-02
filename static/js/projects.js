@@ -5,15 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function fetchProjs() {
         fetch('https://portfolio-backend-five-weld.vercel.app/projects')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(projects => {
+                if (!Array.isArray(projects)) {
+                    throw new Error('Invalid response format');
+                }
+                console.log(`Fetched ${projects.length} projects`);
                 const sortedData = sortProjectsByDate(projects);
                 displayProjects(sortedData);
                 loadingIndicator.style.display = 'none';
             })
             .catch(error => {
                 console.error('Error fetching projects:', error);
-                loadingIndicator.innerText = 'Failed to load projects.';
+                loadingIndicator.innerText = `Failed to load projects: ${error.message}`;
+                loadingIndicator.style.color = '#ff0080';
             });
     }
 

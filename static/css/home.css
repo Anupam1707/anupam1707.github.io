@@ -4,12 +4,14 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(10, 1, 24, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+    border-bottom: 1px solid rgba(0, 245, 255, 0.3);
     z-index: 1000;
     animation: slideDown 0.6s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes slideDown {
@@ -35,11 +37,20 @@ header {
 .logo {
     font-size: 1.8rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    background: linear-gradient(135deg, #00f5ff 0%, #b026ff 50%, #ff0080 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -1px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    animation: logoGlow 3s ease-in-out infinite;
+}\n\n@keyframes logoGlow {
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.5)); }
+    50% { filter: drop-shadow(0 0 16px rgba(176, 38, 255, 0.7)); }
+}\n\n.logo:hover {
+    transform: scale(1.05) rotate(-2deg);
 }
 
 nav {
@@ -55,13 +66,37 @@ nav a {
     font-weight: 500;
     padding: 8px 20px;
     border-radius: 8px;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+nav a:hover::before {
+    left: 100%;
 }
 
 nav a:hover {
     color: #fff;
-    background: rgba(96, 165, 250, 0.15);
+    background: rgba(0, 245, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 245, 255, 0.3);
+}
+
+nav a.active {
+    color: #fff;
+    background: rgba(0, 245, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
 }
 
 nav a::after {
@@ -72,12 +107,13 @@ nav a::after {
     transform: translateX(-50%) scaleX(0);
     width: 60%;
     height: 2px;
-    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    background: linear-gradient(90deg, #00f5ff, #b026ff);
     border-radius: 2px;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-nav a:hover::after {
+nav a:hover::after,
+nav a.active::after {
     transform: translateX(-50%) scaleX(1);
 }
 
@@ -114,10 +150,15 @@ nav a:hover::after {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 100px 20px 60px;
-    gap: 60px;
+    padding: 120px 40px 60px;
+    gap: 80px;
     flex-wrap: wrap;
     animation: fadeIn 1s ease;
+    position: relative;
+}\n\n.role::before {
+    content: '';\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 800px;\n    height: 800px;\n    background: radial-gradient(circle, rgba(0, 245, 255, 0.05) 0%, transparent 70%);\n    border-radius: 50%;\n    animation: pulseGlow 4s ease-in-out infinite;\n    z-index: -1;\n}\n\n@keyframes pulseGlow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
 }
 
 @keyframes fadeIn {
@@ -132,21 +173,35 @@ nav a:hover::after {
 }
 
 .role-text p {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #fff;
+    text-shadow: 0 2px 20px rgba(0, 245, 255, 0.4);
+    animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 #roles {
     display: inline-block;
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #c084fc 100%);
+    background: linear-gradient(135deg, #00f5ff 0%, #b026ff 40%, #ff0080 80%, #39ff14 100%);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    min-width: 200px;
+    min-width: 220px;
     position: relative;
+    animation: gradientSlide 8s ease infinite;
+}
+
+@keyframes gradientSlide {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 #roles::after {
@@ -157,13 +212,33 @@ nav a:hover::after {
     -webkit-text-fill-color: #fff;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
 .role-photo {
     position: relative;
+    animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.role-photo::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00f5ff, #b026ff, #ff0080);
+    opacity: 0.3;
+    animation: rotateBorder 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotateBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .role-photo img {
@@ -171,17 +246,24 @@ nav a:hover::after {
     height: 350px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(139, 92, 246, 0.5);
+    border: 5px solid rgba(176, 38, 255, 0.5);
     box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.3),
-        0 0 40px rgba(139, 92, 246, 0.3),
-        inset 0 0 20px rgba(96, 165, 250, 0.1);
+        0 25px 70px rgba(0, 0, 0, 0.4),
+        0 0 50px rgba(176, 38, 255, 0.5),
+        inset 0 0 30px rgba(0, 245, 255, 0.2);
     animation: float 6s ease-in-out infinite;
-    transition: transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
 }
 
 .role-photo img:hover {
-    transform: scale(1.05) rotate(5deg);
+    transform: scale(1.08) rotate(5deg);
+    border-color: rgba(255, 0, 128, 0.7);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(255, 0, 128, 0.6),
+        inset 0 0 40px rgba(0, 245, 255, 0.3);
 }
 
 @keyframes float {

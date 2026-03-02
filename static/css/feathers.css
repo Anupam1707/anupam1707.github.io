@@ -16,73 +16,87 @@ main {
 
 #dropdown-container label {
     font-size: 1.2rem;
-    color: #6366f1;
-    font-weight: 500;
-    
+    color: #00f5ff;
+    font-weight: 600;
     letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
 }
 
 select {
-    padding: 12px 20px;
-    border: 1px solid #6366f1;
-    border-radius: 4px;
-    font-size: 1rem;
-    background: rgba(30, 41, 59, 0.8);
+    padding: 14px 24px;
+    border: 2px solid rgba(0, 245, 255, 0.5);
+    border-radius: 8px;
+    font-size: 1.05rem;
+    background: rgba(21, 1, 37, 0.85);
     backdrop-filter: blur(10px);
-    color: #6366f1;
+    color: #00f5ff;
     outline: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 245, 255, 0.2);
+}
+
+select:hover {
+    border-color: rgba(176, 38, 255, 0.7);
+    background: rgba(21, 1, 37, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 245, 255, 0.4), 0 0 30px rgba(176, 38, 255, 0.3);
 }
 
 select:focus {
-    border-color: rgba(255, 255, 255, 0.9);
-    background: rgba(30, 41, 59, 0.95);
-    box-shadow: 0 0 20px rgba(91, 156, 255, 0.4);
+    border-color: #b026ff;
+    background: rgba(21, 1, 37, 1);
+    box-shadow: 0 0 40px rgba(176, 38, 255, 0.6);
 }
 
 select option {
-    background: #1e3c72;
-    color: #6366f1;
+    background: #150125;
+    color: #00f5ff;
+    padding: 10px;
 }
 
 #loading {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-align: center;
-    margin: 60px 0;
-    color: #6366f1;
+    margin: 80px 0;
+    color: #00f5ff;
     animation: pulse 2s ease-in-out infinite;
+    font-weight: 600;
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
 }
 
 #certificates-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 35px;
+    margin-top: 50px;
 }
 
 .certificate {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(91, 156, 255, 0.3);
-    border-radius: 8px;
-    padding: 30px;
+    background: rgba(10, 1, 24, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 245, 255, 0.4);
+    border-radius: 12px;
+    padding: 35px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(0, 245, 255, 0.2),
+        inset 0 1px 0 rgba(0, 245, 255, 0.1);
     position: relative;
     overflow: hidden;
 }
 
 .certificate::before {
-    content: '⚡';
+    content: '🏆';
     position: absolute;
     top: 20px;
     right: 20px;
     font-size: 3rem;
     opacity: 0.2;
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 0 10px rgba(91, 156, 255, 0.5));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.6));
 }
 
 .certificate::after {
@@ -92,12 +106,13 @@ select option {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #6366f1, rgba(255, 255, 255, 0.9), #818cf8, #6366f1);
+    background: linear-gradient(45deg, #00f5ff, #b026ff, #ff0080, #00f5ff);
     background-size: 300% 300%;
     z-index: -1;
     opacity: 0;
-    transition: opacity 0.3s ease;
-    animation: gradientMove 4s ease infinite;
+    transition: opacity 0.4s ease;
+    animation: gradientMove 6s ease infinite;
+    border-radius: 12px;
 }
 
 @keyframes gradientMove {
@@ -106,16 +121,17 @@ select option {
 }
 
 .certificate:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-12px) scale(1.03);
     box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(91, 156, 255, 0.3);
-    border-color: #6366f1;
+        0 25px 70px rgba(0, 0, 0, 0.8),
+        0 0 60px rgba(0, 245, 255, 0.5),
+        inset 0 1px 0 rgba(0, 245, 255, 0.2);
+    border-color: rgba(176, 38, 255, 0.8);
 }
 
 .certificate:hover::before {
-    opacity: 0.5;
-    transform: rotate(15deg) scale(1.2);
+    opacity: 0.6;
+    transform: rotate(15deg) scale(1.3);
 }
 
 .certificate:hover::after {
@@ -123,34 +139,40 @@ select option {
 }
 
 .certificate h2 {
-    color: #6366f1;
+    color: #00f5ff;
     font-size: 1.8rem;
-    margin-bottom: 15px;
-    font-weight: 600;
+    margin-bottom: 18px;
+    font-weight: 700;
     position: relative;
     z-index: 1;
-    text-shadow: 0 0 10px rgba(91, 156, 255, 0.5);
+    text-shadow: 0 0 15px rgba(0, 245, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.certificate:hover h2 {
+    color: #b026ff;
+    text-shadow: 0 0 20px rgba(176, 38, 255, 0.7);
 }
 
 .certificate p {
-    color: rgba(168, 85, 247, 0.85);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    color: rgba(226, 232, 240, 0.9);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
     position: relative;
     z-index: 1;
 }
 
 .certificate:nth-child(3n+1) {
-    background: linear-gradient(135deg, rgba(91, 156, 255, 0.1) 0%, rgba(30, 41, 59, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.15) 0%, rgba(10, 1, 24, 0.8) 100%);
 }
 
 .certificate:nth-child(3n+2) {
-    background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(30, 41, 59, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(176, 38, 255, 0.15) 0%, rgba(10, 1, 24, 0.8) 100%);
 }
 
 .certificate:nth-child(3n+3) {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(30, 41, 59, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.15) 0%, rgba(10, 1, 24, 0.8) 100%);
 }
 
 @media (max-width: 768px) {

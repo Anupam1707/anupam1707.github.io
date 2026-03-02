@@ -5,15 +5,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function fetchCerts() {
         fetch('https://portfolio-backend-five-weld.vercel.app/certificates')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(certificates => {
+                if (!Array.isArray(certificates)) {
+                    throw new Error('Invalid response format');
+                }
+                console.log(`Fetched ${certificates.length} certificates`);
                 const sortedData = sortCertificatesByDate(certificates);
                 displayCertificates(sortedData);
                 loadingIndicator.style.display = 'none';
             })
             .catch(error => {
                 console.error('Error fetching certificates:', error);
-                loadingIndicator.innerText = 'Failed to load certificates.';
+                loadingIndicator.innerText = `Failed to load certificates: ${error.message}`;
+                loadingIndicator.style.color = '#ff0080';
             });
     }
 
