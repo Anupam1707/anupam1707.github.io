@@ -46,11 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => {
           console.warn('Error fetching roles, using local fallback:', error);
           const fallbackRoles = [
-              "a Full Stack Developer",
-              "a Web App Developer",
-              "a Website Designer",
-              "a Video Editor",
-              "a Blog Writer"
+              "a Full-Stack Developer",
+              "an AI & LLM Engineer",
+              "a Data Scientist & ML Developer",
+              "a Technical Writer & Coach"
           ];
           startTypewriter(fallbackRoles);
       });
