@@ -19,36 +19,36 @@
     position: fixed;
     border-radius: 50%;
     filter: blur(100px);
-    opacity: 0.3;
-    animation: float 20s ease-in-out infinite;
+    opacity: 0.18;
+    animation: float 25s ease-in-out infinite;
     pointer-events: none;
     z-index: 0;
 }
 
 .bg-orb-1 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #ff6b35 0%, transparent 70%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
     top: -250px;
-    left: -250px;
+    left: -200px;
     animation-delay: 0s;
 }
 
 .bg-orb-2 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #f7931e 0%, transparent 70%);
-    bottom: -200px;
-    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--color-secondary) 0%, transparent 70%);
+    bottom: -150px;
+    right: -150px;
     animation-delay: -7s;
 }
 
 .bg-orb-3 {
     width: 450px;
     height: 450px;
-    background: radial-gradient(circle, #ff0a54 0%, transparent 70%);
-    top: 50%;
-    right: -225px;
+    background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+    top: 40%;
+    right: -200px;
     animation-delay: -14s;
 }
 
@@ -57,10 +57,10 @@
         transform: translate(0, 0) scale(1);
     }
     33% {
-        transform: translate(50px, -50px) scale(1.1);
+        transform: translate(40px, -40px) scale(1.05);
     }
     66% {
-        transform: translate(-50px, 50px) scale(0.9);
+        transform: translate(-40px, 40px) scale(0.95);
     }
 }
 
@@ -77,38 +77,37 @@ main {
 
 /* Glassmorphism Cards Enhancement */
 .glass-card {
-    background: rgba(26, 14, 10, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 107, 53, 0.3);
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(255, 107, 53, 0.2),
-        inset 0 1px 0 rgba(255, 107, 53, 0.1);
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: all var(--transition-smooth);
 }
 
 .glass-card:hover {
-    border-color: rgba(255, 107, 53, 0.6);
+    border-color: rgba(99, 102, 241, 0.35);
     box-shadow: 
-        0 12px 48px rgba(0, 0, 0, 0.6),
-        0 0 60px rgba(255, 107, 53, 0.4),
-        inset 0 1px 0 rgba(255, 107, 53, 0.2);
+        0 15px 45px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(99, 102, 241, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
     transform: translateY(-4px);
 }
 
 /* Glow Text */
 .glow-text {
-    text-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
-    animation: textGlow 3s ease-in-out infinite;
+    text-shadow: 0 0 15px rgba(14, 165, 233, 0.35);
+    animation: textGlow 4s ease-in-out infinite;
 }
 
 @keyframes textGlow {
     0%, 100% {
-        text-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+        text-shadow: 0 0 15px rgba(14, 165, 233, 0.35);
     }
     50% {
-        text-shadow: 0 0 40px rgba(255, 107, 53, 1);
+        text-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
     }
 }
 
@@ -129,7 +128,7 @@ main {
 /* Gradient Border Animation */
 .gradient-border {
     position: relative;
-    background: linear-gradient(135deg, rgba(26, 14, 10, 0.8), rgba(45, 24, 16, 0.6));
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
     border: 2px solid transparent;
     background-clip: padding-box;
 }
@@ -141,15 +140,15 @@ main {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(135deg, #ff6b35, #f7931e, #ff0a54);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
     border-radius: inherit;
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.3;
     transition: opacity var(--transition-base);
 }
 
 .gradient-border:hover::before {
-    opacity: 1;
+    opacity: 0.8;
 }
 
 /* Shimmer Effect */
@@ -168,7 +167,7 @@ main {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.15),
         transparent
     );
     animation: shimmer 3s ease-in-out infinite;
@@ -193,6 +192,7 @@ main {
 @media (max-width: 768px) {
     .bg-orb {
         filter: blur(60px);
+        opacity: 0.15;
     }
     
     .bg-orb-1 {

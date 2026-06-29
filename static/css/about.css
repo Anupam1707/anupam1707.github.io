@@ -1,8 +1,7 @@
-/* About Page - uses shared header from home.css */\nmain {\n    margin-top: 80px;\n    padding: 40px 20px;\n}
-    border-color: #6366f1;
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(91, 156, 255, 0.5);
-    color: rgba(255, 255, 255, 0.9);
+/* About Page - uses shared header from home.css */
+main {
+    margin-top: 80px;
+    padding: 40px 20px;
 }
 
 main {
@@ -12,17 +11,16 @@ main {
 }
 
 section {
-    background: rgba(26, 14, 10, 0.75);
+    background: rgba(15, 23, 42, 0.5);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 107, 53, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     margin: 30px 0;
     padding: 40px;
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(255, 107, 53, 0.2),
-        inset 0 1px 0 rgba(255, 107, 53, 0.1);
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     animation: slideUp 0.6s ease forwards;
     opacity: 0;
     transform: translateY(30px);
@@ -32,11 +30,11 @@ section {
 }
 
 section:hover {
-    border-color: rgba(255, 107, 53, 0.8);
+    border-color: rgba(99, 102, 241, 0.35);
     box-shadow: 
-        0 12px 48px rgba(0, 0, 0, 0.6),
-        0 0 60px rgba(255, 107, 53, 0.5),
-        inset 0 1px 0 rgba(255, 107, 53, 0.2);
+        0 15px 45px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(99, 102, 241, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
     transform: translateY(-4px);
 }
 
@@ -47,18 +45,13 @@ section::before {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #6366f1, transparent);
+    background: linear-gradient(90deg, transparent, var(--color-primary-light), transparent);
     animation: scanline 3s linear infinite;
 }
 
 @keyframes scanline {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
-}
-/* About Page - uses shared header from home.css */
-main {
-    margin-top: 80px;
-    padding: 40px 20px;
 }
 
 section:nth-child(1) { animation-delay: 0.1s; }
@@ -75,13 +68,13 @@ section:nth-child(5) { animation-delay: 0.5s; }
 }
 
 section h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-bottom: 25px;
-    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff0a54 100%);
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    border-bottom: 3px solid rgba(255, 107, 53, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 20px;
     letter-spacing: 0.5px;
     font-weight: 800;
@@ -93,11 +86,11 @@ section h2 {
 section h2::after {
     content: '';
     position: absolute;
-    bottom: -3px;
+    bottom: -1px;
     left: 0;
     width: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #f7931e, #ff0a54);
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-secondary));
     transition: width 0.6s ease;
 }
 
@@ -106,9 +99,9 @@ section:hover h2::after {
 }
 
 section p {
-    font-size: 1.15rem;
-    line-height: 1.9;
-    color: rgba(226, 232, 240, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
     letter-spacing: 0.3px;
 }
 
@@ -119,33 +112,31 @@ section ul {
 }
 
 section ul li {
-    padding: 15px 0;
-    padding-left: 35px;
+    padding: 12px 0;
+    padding-left: 28px;
     position: relative;
-    font-size: 1.15rem;
-    color: rgba(226, 232, 240, 0.9);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
     transition: all 0.3s ease;
 }
 
 section ul li:hover {
-    color: #fff;
-    transform: translateX(10px);
+    color: var(--text-primary);
+    transform: translateX(6px);
 }
 
 section ul li::before {
     content: '▸';
     position: absolute;
     left: 0;
-    color: #ff6b35;
-    font-size: 1.3rem;
-    text-shadow: 0 0 15px rgba(255, 107, 53, 0.8);
+    color: var(--color-secondary);
+    font-size: 1.2rem;
     transition: all 0.3s ease;
 }
 
 section ul li:hover::before {
-    color: #ff0a54;
-    text-shadow: 0 0 20px rgba(255, 10, 84, 0.9);
-    transform: translateX(5px);
+    color: var(--color-primary-light);
+    transform: translateX(3px);
 }
 
 /* Global footer styles handled by styles.css */
@@ -166,10 +157,6 @@ section ul li:hover::before {
     section h2 {
         font-size: 1.5rem;
     }
-    
-    header .header-content h2 {
-        font-size: 2rem;
-    }
 }
 
 /* FAQ Section styling */
@@ -178,7 +165,7 @@ section ul li:hover::before {
 }
 .faq-item {
     margin-bottom: 25px;
-    border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 20px;
 }
 .faq-item:last-child {
@@ -186,13 +173,13 @@ section ul li:hover::before {
     padding-bottom: 0;
 }
 .faq-question {
-    font-size: 1.3rem;
-    color: #fff;
+    font-size: 1.2rem;
+    color: var(--text-primary);
     margin-bottom: 10px;
     font-weight: 600;
 }
 .faq-answer {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: rgba(226, 232, 240, 0.85);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
 }
