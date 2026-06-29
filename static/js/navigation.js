@@ -1,11 +1,14 @@
 // Active navigation state management
 document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname.split('/').pop() || 'home.html';
+    const cleanCurrentPage = currentPage.replace('.html', '');
     const navLinks = document.querySelectorAll('nav a');
     
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === 'index.html' && href === 'home.html')) {
+        const cleanHref = href ? href.replace('.html', '') : '';
+        
+        if (cleanHref === cleanCurrentPage || (cleanCurrentPage === 'index' && cleanHref === 'home')) {
             link.classList.add('active');
         }
         

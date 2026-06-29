@@ -163,8 +163,8 @@ nav a.active::after {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
     align-items: center;
 }
 
@@ -229,9 +229,9 @@ nav a.active::after {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 24px;
     color: #fff;
     animation: fadeInUp 0.8s ease-out 0.2s backwards;

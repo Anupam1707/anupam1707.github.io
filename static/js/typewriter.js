@@ -1,41 +1,57 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const element = document.getElementById('roles');
+  
+  function startTypewriter(roles) {
+      let roleIndex = 0;
+      let charIndex = 0;
+
+      function type() {
+          if (!roles[roleIndex]) return;
+          // Trim any carriage returns or extra whitespace
+          const currentRole = roles[roleIndex].trim();
+          if (charIndex < currentRole.length) {
+              element.textContent += currentRole.charAt(charIndex);
+              charIndex++;
+              setTimeout(type, 50);
+          } else {
+              setTimeout(erase, 1500); // 1.5s pause when word is fully typed
+          }
+      }
+
+      function erase() {
+          const currentRole = roles[roleIndex].trim();
+          if (charIndex > 0) {
+              element.textContent = currentRole.substring(0, charIndex - 1);
+              charIndex--;
+              setTimeout(erase, 50); // Slightly faster erase for responsiveness
+          } else {
+              roleIndex = (roleIndex + 1) % roles.length;
+              setTimeout(type, 200);
+          }
+      }
+
+      setTimeout(type, 500);
+  }
+
   // Fetch roles from roles.txt
   fetch('misc/roles.txt')
-      .then(response => response.text())
+      .then(response => {
+          if (!response.ok) throw new Error('Network response not ok');
+          return response.text();
+      })
       .then(data => {
-          // Split roles by newline or any other delimiter as per your file
-          const roles = data.split('\n'); // Split by newline assuming each role is on a new line
-          const element = document.getElementById('roles');
-          let roleIndex = 0;
-          let charIndex = 0;
-
-          function type() {
-              if (charIndex < roles[roleIndex].length) {
-                  element.textContent += roles[roleIndex].charAt(charIndex);
-                  charIndex++;
-                  setTimeout(type, 50);
-              } else {
-                  setTimeout(erase, 500);
-              }
-          }
-
-          function erase() {
-              if (charIndex > 0) {
-                  element.textContent = roles[roleIndex].substring(0, charIndex - 1);
-                  charIndex--;
-                  setTimeout(erase, 100);
-              } else {
-                  roleIndex++;
-                  if (roleIndex >= roles.length) {
-                      roleIndex = 0;
-                  }
-                  setTimeout(type, 150);
-              }
-          }
-
-          setTimeout(type, 1000);
+          const roles = data.split('\n').filter(role => role.trim().length > 0);
+          startTypewriter(roles);
       })
       .catch(error => {
-          console.error('Error fetching roles:', error);
+          console.warn('Error fetching roles, using local fallback:', error);
+          const fallbackRoles = [
+              "a Full Stack Developer",
+              "a Web App Developer",
+              "a Website Designer",
+              "a Video Editor",
+              "a Blog Writer"
+          ];
+          startTypewriter(fallbackRoles);
       });
 });
