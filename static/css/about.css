@@ -148,21 +148,7 @@ section ul li:hover::before {
     transform: translateX(5px);
 }
 
-footer {
-    background: rgba(26, 14, 10, 0.9);
-    backdrop-filter: blur(15px);
-    border-top: 2px solid rgba(255, 107, 53, 0.4);
-    color: rgba(226, 232, 240, 0.9);
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 80px;
-    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
-}
-
-footer p {
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-}
+/* Global footer styles handled by styles.css */
 
 /* Responsive Design */
 @media (max-width: 768px) {
