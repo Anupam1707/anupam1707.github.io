@@ -184,3 +184,28 @@ footer p {
         font-size: 2rem;
     }
 }
+
+/* FAQ Section styling */
+.faq-list {
+    margin-top: 25px;
+}
+.faq-item {
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+    padding-bottom: 20px;
+}
+.faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.faq-question {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.faq-answer {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(226, 232, 240, 0.85);
+}

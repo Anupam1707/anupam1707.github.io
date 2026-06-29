@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Sitemap: https://anupam1707.github.io/sitemap.xml
+
+# Allow Major AI Search Engines and LLM scrapers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Disallow private paths
+Disallow: /admin.html
+Disallow: /misc/
